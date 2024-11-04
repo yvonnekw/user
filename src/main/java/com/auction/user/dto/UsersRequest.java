@@ -4,7 +4,7 @@ package com.auction.user.dto;
 import jakarta.validation.constraints.NotNull;
 
 public record UsersRequest(
-        Long userId,
+        //Long userId,
         String username,
         String password,
         @NotNull(message = "User's first name is required")

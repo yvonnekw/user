@@ -181,9 +181,10 @@ public class UsersServiceImpl {
     }
 
     public UsersResponse updateUser(UsersRequest requestBody) {
-        var user = usersRepository.findById(requestBody.userId())
+        //var user = usersRepository.findById(requestBody.username())
+        var user = usersRepository.findByUsername(requestBody.username())
                 .orElseThrow(() -> new UserNotFoundException(
-                   format("Can not update user with the Id provide. No user found with the provided Id:: %s", requestBody.userId())
+                   format("Can not update user with the Id provide. No user found with the provided Id:: %s", requestBody.username())
 
                 ));
         mergeUser(user, requestBody);
